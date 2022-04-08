@@ -15,11 +15,16 @@ export function App() {
       <Heading as="h1" size="lg" m={4}>
         SpaceX Missions
       </Heading>
-      <section>
-        {launches.map((launch) => (
-          <LaunchItem key={launch.flight_number} {...launch}></LaunchItem>
-        ))}
-      </section>
+      {
+        launches.length === 0 ? (
+          <div>Loading ...</div>
+        ) : (
+          <section>
+            {launches.map((launch) => (
+              <LaunchItem key={launch.flight_number} {...launch}></LaunchItem>
+            ))}
+          </section>)
+      }
     </>
   );
 }
