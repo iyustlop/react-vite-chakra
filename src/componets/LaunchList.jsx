@@ -7,7 +7,7 @@ export function LaunchList() {
     const [launches, setLaunches] = useState([]);
 
     useEffect(() => {
-        API.getAllLaunches().then(setLaunches);
+        API.getAllLaunches().then(setLaunches).catch(console.error);
     }, []);
 
     return (
